@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+<?php query_posts( array('post_type' => '${1:name-post-type}', 'posts_per_page' => ${2:1}, 'order' => '${3:DESC}') ); ?>
+<?php if ( have_posts() ) { ?>
+	<?php while ( have_posts() ) { ?>
+		<?php the_post(); ?> 
+		${4:<!-- Content -->}
+	<?php } ?>
+<?php } else { ?>
+	${5:<!-- Content -->}
+<?php } wp_reset_query(); ?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>loop:alt</tabTrigger>
+	<description>WP: Alternative aloop declaration</description>
+	<scope>text.html</scope>
+</snippet>

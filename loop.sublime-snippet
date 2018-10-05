@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[<?php
+	\$${4:arg} = array(
+		'post_type'		 => '${1:custom-post-name}',
+		'category_name'	 => '',
+		'posts_per_page' => ${2:1},
+		'offset'		 => ${3:0},
+		'post__not_in'	 => array(\$post->ID),
+		'paged'			 => \$paged
+	);
+
+	\$get_${4:arg} = new WP_Query( \$${4:arg} );
+
+	while ( \$get_${4:arg}->have_posts() ) {
+		\$get_${4:arg}->the_post();
+	?>
+		
+		${5:<!-- Content -->}
+
+	<?php } wp_reset_postdata();
+?>]]></content>
+	<tabTrigger>loop</tabTrigger>
+	<description>WP: loop declaration</description>
+	<scope>text.html</scope>
+</snippet>

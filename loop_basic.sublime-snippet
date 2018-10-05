@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+<?php if ( have_posts() ) { ?>
+	<?php while ( have_posts() ) { ?>
+		<?php the_post(); ?>
+		${1:<!-- Content -->}
+	<?php } ?>
+<?php } else { ?>
+	${2:<!-- Content -->}
+<?php } wp_reset_query(); ?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>loop:basic</tabTrigger>
+	<description>WP: Basic loop declaration</description>
+	<scope>text.html</scope>
+</snippet>

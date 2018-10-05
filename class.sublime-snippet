@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+${1/.+/\/**\n * /}${1:summary}${1/.+/\n *\/\n//}class ${2:Name}${3/.+/ extends /}${3:ExtendsName}
+{
+    ${4/.+/\/**\n     * /}${4:summary}${4/.+/\n     *\/\n    //}${5:public }function ${6:__construct}($7)
+    {
+        $0
+    }
+}
+]]></content>
+    <tabTrigger>class</tabTrigger>
+    <scopeAliases>language_construct</scopeAliases>
+    <scope>text.html</scope>
+    <description>PHP: class declaration</description>
+</snippet>
