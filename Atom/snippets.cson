@@ -1,0 +1,65 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.text.html, .text.html.php':
+  'loop':
+    'prefix': 'loop'
+    'body': "<?php
+            	\$${4:arg} = array(\n
+            		'post_type'		 => '${1:custom-post-name}',\n
+            		'category_name'	 => '',\n
+            		'posts_per_page' => ${2:1},\n
+            		'offset'		 => ${3:0},\n
+            		'post__not_in'	 => array(\$post->ID),\n
+            		'paged'			 => \$paged\n
+            	);\n
+\n
+            	\$get_${4:arg} = new WP_Query( \$${4:arg} );\n
+\n
+            	while ( \$get_${4:arg}->have_posts() ) {\n
+            		\$get_${4:arg}->the_post();\n
+            	?>\n
+\n
+            		${5:<!-- Content -->}\n
+\n
+            	<?php } wp_reset_postdata(); ?>"
+  'loop_alt':
+    'prefix': 'loop_alt'
+    'body': "<?php query_posts( array('post_type' => '${1:name-post-type}', 'posts_per_page' => ${2:1}, 'order' => '${3:DESC}') ); ?>\n
+            <?php if ( have_posts() ) { ?>\n
+            <?php while ( have_posts() ) { ?>\n
+              <?php the_post(); ?>\n
+              ${4:<!-- Content -->}\n
+            <?php } ?>\n
+            <?php } else { ?>\n
+            ${5:<!-- Content -->}\n
+            <?php } wp_reset_query(); ?>"
+  'loop_basic':
+    'prefix': 'loop_basic'
+    'body': "<?php if ( have_posts() ) { ?>\n
+	<?php while ( have_posts() ) { ?>\n
+		<?php the_post(); ?>\n
+		${1:<!-- Content -->}\n
+	<?php } ?>\n
+<?php } else { ?>\n
+	${2:<!-- Content -->}\n
+<?php } wp_reset_query(); ?>"
