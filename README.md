@@ -11,3 +11,9 @@ Para utilizar los snippets en Atom, lleva el archivo Atom/snippets.cson a la sig
 
 - Mac: `~/.Atom/`
 - Windows: `C:\Users\NombreUsuario\.atom`
+
+### VSCode
+Para agregar snippets en VSCode deberás dejar los archivos de la carpeta VSCode en esta ruta:
+
+- Mac: `~/Library/Application\ Support/Code/User/snippets`
+- Windows: `C:\Users\NombreUsuario\AppData\Roaming\Code\User\snippets`

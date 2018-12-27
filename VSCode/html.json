@@ -1,0 +1,52 @@
+{
+	"Print out WP Loop": {
+		"prefix": "loop",
+		"description": "Print out WP Loop",
+		"body": ["<?php",
+				"	\$${4:arg} = array(",
+				"		'post_type'		 => '${1:custom-post-name}',",
+				"		'category_name'	 => '',",
+				"		'posts_per_page' => ${2:1},",
+				"		'offset'		 => ${3:0},",
+				"		'post__not_in'	 => array(\$post->ID),",
+				"		'paged'			 => \$paged",
+				"	);",
+				"",
+				"	\$get_${4:arg} = new WP_Query( \$${4:arg} );",
+				"",
+				"	while ( \$get_${4:arg}->have_posts() ) {",
+				"		\$get_${4:arg}->the_post();",
+				"	?>",
+				"",
+				"		${5:<!-- Content -->}",
+				"",
+				"	<?php } wp_reset_postdata();",
+				"?>"]
+	},
+	"Print out Alternative WP Loop": {
+		"prefix": "loop:alt",
+		"description": "Print out Alternative WP Loop",
+		"body": ["<?php query_posts( array('post_type' => '${1:name-post-type}', 'posts_per_page' => ${2:1}, 'order' => '${3:DESC}') ); ?>",
+				"<?php if ( have_posts() ) { ?>",
+				"	<?php while ( have_posts() ) { ?>",
+				"		<?php the_post(); ?> ",
+				"		${4:<!-- Content -->}",
+				"	<?php } ?>",
+				"<?php } else { ?>",
+				"	${5:<!-- Content -->}",
+				"<?php } wp_reset_query(); ?>"]
+	},
+	"Print out Basic WP Loop": {
+		"prefix": "loop:basic",
+		"description": "Print out Basic WP Loop",
+		"body": ["<?php if ( have_posts() ) { ?>",
+				"	<?php while ( have_posts() ) { ?>",
+				"		<?php the_post(); ?>",
+				"		${1:<!-- Content -->}",
+				"	<?php } ?>",
+				"<?php } else { ?>",
+				"	${2:<!-- Content -->}",
+				"<?php } wp_reset_query(); ?>"
+		]
+	}
+}
