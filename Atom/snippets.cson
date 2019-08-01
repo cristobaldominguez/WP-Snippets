@@ -63,3 +63,65 @@
 <?php } else { ?>\n
 	${2:<!-- Content -->}\n
 <?php } wp_reset_query(); ?>"
+'*':
+  'Print out GitIgnore Basic Data':
+    'prefix': 'gitignore'
+    'body': """
+        ### Linux ###
+        *~
+        .fuse_hidden*
+        .directory
+        .Trash-*
+        .nfs*
+        
+        ### macOS ###
+        .DS_Store
+        .AppleDouble
+        .LSOverride
+        Icon
+        ._*
+        .DocumentRevisions-V100
+        .fseventsd
+        .Spotlight-V100
+        .TemporaryItems
+        .Trashes
+        .VolumeIcon.icns
+        .com.apple.timemachine.donotpresent
+        .AppleDB
+        .AppleDesktop
+        Network Trash Folder
+        Temporary Items
+        .apdisk
+        
+        ### Windows ###
+        Thumbs.db
+        Thumbs.db:encryptable
+        ehthumbs.db
+        ehthumbs_vista.db
+        *.stackdump
+        [Dd]esktop.ini
+        .BIN/
+        *.cab
+        *.msi
+        *.msix
+        *.msm
+        *.msp
+        *.lnk
+        
+        ### WordPress ###
+        license.txt
+        readme.html
+        /*.php
+        wp-*
+        !wp-content/
+        wp-content/*
+        !wp-content/plugins/
+        !wp-content/themes/
+        !wp-content/uploads/
+        wp-content/plugins/hello.php
+        wp-content/themes/twenty*/
+        node_modules/
+        *.log
+        *.sql
+        *.sqlite
+  """
