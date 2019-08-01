@@ -17,3 +17,12 @@ Para agregar snippets en VSCode deberás dejar los archivos de la carpeta VSCode
 
 - Mac: `~/Library/Application Support/Code/User/snippets`
 - Windows: `C:\Users\NombreUsuario\AppData\Roaming\Code\User\snippets`
+
+## Shortcuts
+Los atajos para utilizar son:
+
+- `class`: Agrega la estructura básica de una clase de PHP (solo para Sublime Text).
+- `loop`: Agrega el contenido del loop más completo de WP.
+- `loop:alt`: Agrega una estructura alternativa del loop de WP (En Atom se utiliza como: `loop_alt`).
+- `loop:basic`: Agrega la estuctura de loop más básica y que encontraremos en archivos como page o single (En Atom se utiliza como: `loop_basic`).
+- `gitignore`: Estructura básica para el archivo .gitignore, se recomienda crear este archivo en la carpeta raíz del proyecto, al igual que la inicialización de Git (`git init`)
